@@ -142,17 +142,17 @@ class _StoryListState extends State<StoryList>
       setState(() {
         if (_current_index - 1 >= 0) {
           _current_index -= 1;
-          _loadStory(story: stories[_current_index]);
+          _loadStory(story: stories[0][_current_index]);
         }
       });
     } else if (dx > 2 * screenWidth / 3) {
       setState(() {
         if (_current_index + 1 < widget.stories.length) {
           _current_index += 1;
-          _loadStory(story: stories[_current_index]);
+          _loadStory(story: stories[0][_current_index]);
         } else {
           _current_index = 0;
-          _loadStory(story: stories[_current_index]);
+          _loadStory(story: stories[0][_current_index]);
         }
       });
     } else {
